@@ -48,7 +48,7 @@ To synthesize audios with trained FS2 acoustic model, follow the commands below.
 
 For this project, it is important to control pitch, duration and energy acoustic features to transition from a neutral speech to friendly speech. the control of these acoustic features acn be realized with parameters `--pitch_control`, `--duration_control`, `--energy_control`. 
 
-`python3 synthesize.py --text “今天上海的天气很好” --speaker_id 2 --restore_step 600000 --mode single -p config/AISHELL3/preprocess.yaml -m config/AISHELL3/model.yaml -t config/AISHELL3/train.yaml --pitch_control 1.2 --duration_control 0.9 --energy_control 1`
+`python3 synthesize.py --text “今天上海的天气很好” --speaker_id 2 --restore_step 600000 --mode single -p config/CN/preprocess.yaml -m config/CN/model.yaml -t config/CN/train.yaml --pitch_control 1.2 --duration_control 0.9 --energy_control 1`
 
 The synthesized speech will be placed in `~/output/result`. All the sentences synthesized for this project are stored in `synthesized_audios` folder.
 
