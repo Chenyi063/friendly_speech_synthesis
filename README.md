@@ -1,4 +1,4 @@
-# friendly_speech_synthesis
+# Friendly_speech_synthesis
 
 This repository provides code and procedures to synthesize friendly speech in Mandarin Chinese by manipulating acoustic features such as pitch, duration, and energy in neutral speech using the FastSpeech model. It utilizes the [PyTorch implementation of FastSpeech 2](https://github.com/ming024/FastSpeech2) by ming024 with some modifications.
 
@@ -28,7 +28,7 @@ Before training the FastSpeech2 acoustic model, [Montreal Forced Alignment (MFA)
 5. generate textgrid files
 `mfa align ~/corpus ~/dictionary ~/acoustic_model ~/output  -t ~/temp --no_textgrid_cleanup`
 
-## train FastSpeech2 (FS2) acoustic model
+## Train FastSpeech2 (FS2) acoustic model
 
 After aligning speech data using MFA, we can train FS2 acoustic model using following steps. To utilize the FS2 model effectively, it is important to utilize a GPU. Specifically, for this project, the [Hábrók](https://wiki.hpc.rug.nl/habrok/start) GPU is employed. Before training the model, we need to prepare files by copying all the files of this repository to Hábrók and adding the coupus files.
 
@@ -40,7 +40,7 @@ After aligning speech data using MFA, we can train FS2 acoustic model using foll
 
 The training for the FS2 model with 600k steps took about 54 hours.
 
-## synthesize audios 
+## Synthesize audios 
 
 To synthesize audios with trained FS2 acoustic model, follow the commands below. Given that it is a multi-speaker FS2 model, we also need to specify the voice to synthesize from voices used for training FS2 acousticmmdoel with parameter `--speaker_id `.
 
