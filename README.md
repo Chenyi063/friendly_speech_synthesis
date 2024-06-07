@@ -50,6 +50,8 @@ For this project, it is important to control pitch, duration and energy acoustic
 
 `python3 synthesize.py --text “今天上海的天气很好” --speaker_id 2 --restore_step 600000 --mode single -p config/AISHELL3/preprocess.yaml -m config/AISHELL3/model.yaml -t config/AISHELL3/train.yaml --pitch_control 1.2 --duration_control 0.9 --energy_control 1`
 
+The synthesized speech will be placed in `~/output/result`. All the sentences synthesized for this project are stored in `synthesized_audios` folder.
+
 
 
 
