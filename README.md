@@ -38,7 +38,7 @@ After aligning speech data using MFA, the next step involves training the FS2 ac
 2. train FS2 acoustic model
 `python3 train.py -p ~/config/CN/preprocess1.yaml -m ~/config/CN/model1.yaml -t ~/config/CN/train1.yaml`
 
-The training for the FS2 model with 600k steps took about 54 hours.
+The training of the FS2 model with 600k steps took about 54 hours. The pretained acoustic model with 600k steps can be found [here](https://drive.google.com/drive/u/1/folders/1x5OQVRTKLBggMhXllNs0PJVsfwEJ0qUl)
 
 ## Synthesize audios 
 
