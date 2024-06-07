@@ -28,7 +28,7 @@ Before training the FastSpeech2 acoustic model, [Montreal Forced Alignment (MFA)
 5. generate textgrid files
 `mfa align ~/corpus ~/dictionary ~/acoustic_model ~/output  -t ~/temp --no_textgrid_cleanup`
 
-## Train FastSpeech2 (FS2) acoustic model
+## FastSpeech2 (FS2) model training
 
 After aligning speech data using MFA, the next step involves training the FS2 acoustic model. To ensure optimal performance, it is essential to utilize a GPU. In this project, we employ the [Hábrók](https://wiki.hpc.rug.nl/habrok/start) GPU. Before proceeding with model training, it is necessary to prepare files by copying all repository files to Hábrók and adding the corpus files.
 
@@ -40,7 +40,7 @@ After aligning speech data using MFA, the next step involves training the FS2 ac
 
 The training of the FS2 model with 600k steps took about 54 hours. The pretained acoustic model with 600k steps can be found [here](https://drive.google.com/drive/u/1/folders/1gMW73-z6i3vekpLJ36ZFhgUqQfhWqupi)
 
-## Synthesize audios 
+## Inference
 
 To synthesize audio using the trained FS2 acoustic model, please follow the commands provided below. Since it is a multi-speaker FS2 model, it is necessary to specify the voice to be synthesized by indicating the speaker ID corresponding to the voices utilized during the training of the FS2 acoustic model with the parameter `--speaker_id `.
 
