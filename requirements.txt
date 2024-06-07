@@ -1,0 +1,19 @@
+g2p-en 
+inflect 
+librosa 
+matplotlib
+numba 
+numpy 
+pypinyin
+pyworld
+PyYAML
+scikit-learn
+scipy 
+soundfile
+tensorboard 
+tgt 
+torch == 2.0.0
+tqdm
+unidecode
+protobuf
+Pillow
