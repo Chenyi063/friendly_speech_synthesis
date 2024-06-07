@@ -30,7 +30,7 @@ Before training the FastSpeech2 acoustic model, [Montreal Forced Alignment (MFA)
 
 ## Train FastSpeech2 (FS2) acoustic model
 
-After aligning speech data using MFA, we can train FS2 acoustic model using following steps. To utilize the FS2 model effectively, it is important to utilize a GPU. Specifically, for this project, the [Hábrók](https://wiki.hpc.rug.nl/habrok/start) GPU is employed. Before training the model, we need to prepare files by copying all the files of this repository to Hábrók and adding the coupus files.
+After aligning speech data using MFA, the next step involves training the FS2 acoustic model. To ensure optimal performance, it is essential to utilize a GPU. In this project, we employ the [Hábrók](https://wiki.hpc.rug.nl/habrok/start) GPU. Before proceeding with model training, it is necessary to prepare files by copying all repository files to Hábrók and adding the corpus files.
 
 1. preprocessing
 `python3 preprocess.py ~/config/CN/preprocess.yaml`
@@ -42,17 +42,15 @@ The training for the FS2 model with 600k steps took about 54 hours.
 
 ## Synthesize audios 
 
-To synthesize audios with trained FS2 acoustic model, follow the commands below. Given that it is a multi-speaker FS2 model, we also need to specify the voice to synthesize from voices used for training FS2 acousticmmdoel with parameter `--speaker_id `.
+To synthesize audio using the trained FS2 acoustic model, please follow the commands provided below. Since it is a multi-speaker FS2 model, it is necessary to specify the voice to be synthesized by indicating the speaker ID corresponding to the voices utilized during the training of the FS2 acoustic model with the parameter `--speaker_id `.
 
 `python3 synthesize.py --text “今天上海的天气很好” --speaker_id 2 --restore_step 600000 --mode single -p ~/config/CN/preprocess1.yaml -m ~/config/CN/model1.yaml -t ~/config/CN/train1.yaml `
 
-For this project, it is important to control pitch, duration and energy acoustic features to transition from a neutral speech to friendly speech. the control of these acoustic features acn be realized with parameters `--pitch_control`, `--duration_control`, `--energy_control`. 
+In this project, it is crucial to control pitch, duration, and energy acoustic features to smoothly transition from neutral speech to friendly speech. This control can be achieved through parameters `--pitch_control`, `--duration_control`, `--energy_control`. 
 
 `python3 synthesize.py --text “今天上海的天气很好” --speaker_id 2 --restore_step 600000 --mode single -p config/CN/preprocess.yaml -m config/CN/model.yaml -t config/CN/train.yaml --pitch_control 1.2 --duration_control 0.9 --energy_control 1`
 
-The synthesized speech will be placed in `~/output/result`. All the sentences synthesized for this project are stored in `synthesized_audios` folder.
-
-
+The synthesized speech will be saved in the directory `~/output/result`. All the sentences synthesized for this project are stored in `synthesized_audios` folder.
 
 
 
