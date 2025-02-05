@@ -1,6 +1,6 @@
 # Friendly_speech_synthesis
 
-This repository provides code and procedures to synthesize friendly speech in Mandarin Chinese by manipulating acoustic features such as pitch, duration, and energy in neutral speech using the FastSpeech model. It utilizes the [PyTorch implementation of FastSpeech 2](https://github.com/ming024/FastSpeech2) by ming024 with some modifications.
+This repository provides code and procedures to synthesize friendly speech in Mandarin Chinese by manipulating acoustic features such as pitch, duration, and energy in neutral speech using the FastSpeech2 model. It utilizes the [PyTorch implementation of FastSpeech 2](https://github.com/ming024/FastSpeech2) by ming024 with some modifications.
 
 ## Corpus preparation
 
